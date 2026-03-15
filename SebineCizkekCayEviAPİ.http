@@ -1,0 +1,6 @@
+@SebineCizkekCayEviAPİ_HostAddress = http://localhost:5073
+
+GET {{SebineCizkekCayEviAPİ_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

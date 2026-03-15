@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Səbinə Çizkek &amp; Çay Evi</title>
+    <meta name="description" content="Səbinə Çizkek & Çay Evi - Premium cheesecake, tortlar ve çaylar. Baki, Azerbaycan.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 8h1a4 4 0 010 8h-1"/>
+                        <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
+                        <line x1="6" y1="1" x2="6" y2="4"/>
+                        <line x1="10" y1="1" x2="10" y2="4"/>
+                        <line x1="14" y1="1" x2="14" y2="4"/>
+                    </svg>
+                </span>
+                Səbinə <span class="logo-accent">Çizkek &amp; Çay Evi</span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#home" class="nav-link active">Ana Səhifə</a>
+                <a href="#menu" class="nav-link">Menyu</a>
+                <a href="#about" class="nav-link">Haqqımızda</a>
+                <a href="#gallery" class="nav-link">Qalereya</a>
+                <a href="#reservation" class="nav-link">Rezervasiya</a>
+                <a href="#contact" class="nav-link">Əlaqə</a>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Səbət">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="burger" id="burger" aria-label="Menyu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="slider" id="slider">
+            <div class="slide active" style="background-image: url('/images/hero-cheesecake.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <span class="slide-tag">Yeni</span>
+                    <h1>New York Cheesecake</h1>
+                    <p>Klassik resept ilə hazırlanan əsl New York dadı</p>
+                    <a href="#menu" class="btn btn-primary">İndi Sifariş Et</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/images/hero-cake.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <span class="slide-tag">Premium</span>
+                    <h1>Chocolate Dream Cake</h1>
+                    <p>Zəngin şokolad dadı ilə unudulmaz desert təcrübəsi</p>
+                    <a href="#menu" class="btn btn-primary">İndi Sifariş Et</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/images/hero-tea.jpg')">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <span class="slide-tag">Kolleksiya</span>
+                    <h1>Premium Çay Kolleksiyası</h1>
+                    <p>Dünyadan seçilmiş ən yaxşı çay çeşidləri</p>
+                    <a href="#menu" class="btn btn-primary">İndi Sifariş Et</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Öncəki">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="slider-btn slider-next" id="sliderNext" aria-label="Növbəti">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+    <section class="founder section" id="founder">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/Lady Sabina.jpg" alt="Səbinə - Qurucu">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">Qurucu</span>
+                <h2 class="section-title">Səbinə İsgəndərova</h2>
+                <p class="about-text">
+                    Mən Səbinə, desert sənətinə olan sevgimlə bu məkanı yaratdım.
+                    Hər bir cheesecake və tort mənim üçün sadəcə məhsul deyil,
+                    bir sənət əsəridir.
+                </p>
+                <p class="about-text">
+                    Məqsədim Bakıda ən keyfiyyətli və zövqlü desert məkanını
+                    yaratmaqdır.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/WhatsApp Image 2026-02-23 at 16.15.22.jpeg" alt="Səbinə Çizkek & Çay Evi - interyerimiz" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Haqqımızda</span>
+                    <h2 class="section-title">Desert Sənəti, Çay Mədəniyyəti</h2>
+                    <p class="about-text">
+                        Səbinə Çizkek &amp; Çay Evi olaraq, biz hər bir desserti sevgi və peşəkarlıqla hazırlayırıq.
+                        Təzə ingredientlər, orijinal reseptlər ve müştərilərimizin məmnuniyyəti bizim əsas prinsipimizdir.
+                    </p>
+                    <p class="about-text">
+                        Rahat və zərif məkanımızda premium çaylar əsliyində ən dadlı cheesecake və tortların dadına baxın.
+                        Hər bir tikədə keyfiyyət hiss edin.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Desert çeşidi</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Çay çeşidi</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Xoşbəxt müştəri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Menyumuz</span>
+                <h2 class="section-title">Dadlı Seçimlər</h2>
+                <p class="section-desc">Ən təzə ingredientlərlə hazırlanan premium dessert və çaylarımız</p>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Hamısı</button>
+                <button class="filter-btn" data-filter="cheesecake">Çizkek</button>
+                <button class="filter-btn" data-filter="tort">Tortlar</button>
+                <button class="filter-btn" data-filter="çay">Çaylar</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="video">
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <span class="section-tag section-tag-light">Proses</span>
+            <h2 class="video-title">Dessertlərimiz Necə Hazırlanır?</h2>
+            <p class="video-desc">Hər bir desert ustalarımız tərəfindən əl işi ilə, sevgi və diqqətlə hazırlanır</p>
+            <button class="btn btn-play" id="playVideoBtn" aria-label="Videonu oynat">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Qalereya</span>
+                <h2 class="section-title">Məkanımızdan Görüntülər</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2026-02-24 at 19.31.57.jpeg" alt="Məkanımızın interyer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                 <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2026-02-24 at 19.34.39.jpeg" alt="Məkanımızın interyer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                 <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2026-02-24 at 19.43.18.jpeg" alt="Məkanımızın interyer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2026-02-24 at 19.32.59.jpeg" alt="Məkanımızın interyer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/WhatsApp Image 2026-02-24 at 19.43.20.jpeg" alt="Məkanımızın interyer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Bağla">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <img src="" alt="Boyudulmush sekil" id="lightboxImg">
+    </div>
+
+    <section class="reservation section" id="reservation">
+        <div class="container">
+            <div class="reservation-grid">
+                <div class="reservation-info">
+                    <span class="section-tag">Rezervasiya</span>
+                    <h2 class="section-title">Masa Rezerv Edin</h2>
+                    <p class="reservation-desc">
+                        Xüsusi günləriniz üçün və ya rahat bir axşam üçün öncədən masa rezerv edin.
+                        Biz sizin üçün ən yaxşı təcrübəni hazırlayaq.
+                    </p>
+                    <div class="reservation-features">
+                        <div class="feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Rahat məkan</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Premium servis</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Xüsusi münasibətlər üçün ideal</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-group">
+                        <label for="resName">Ad, Soyad</label>
+                        <input type="text" id="resName" name="name" placeholder="Adınızı daxil edin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resPhone">Telefon</label>
+                        <input type="tel" id="resPhone" name="phone" placeholder="+994 XX XXX XX XX" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resDate">Tarix</label>
+                            <input type="date" id="resDate" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resTime">Saat</label>
+                            <input type="time" id="resTime" name="time" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="resPeople">Nəfər sayı</label>
+                        <select id="resPeople" name="peopleCount" required>
+                            <option value="">Seçin</option>
+                            <option value="1">1 nəfər</option>
+                            <option value="2">2 nəfər</option>
+                            <option value="3">3 nəfər</option>
+                            <option value="4">4 nəfər</option>
+                            <option value="5">5 nəfər</option>
+                            <option value="6">6+ nəfər</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Rezerv Et</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo logo-footer">
+                        Səbinə <span class="logo-accent">Çizkek &amp; Çay Evi</span>
+                    </a>
+                    <p class="footer-desc">Premium çizkek, tortlar və çaylar. Hər tikədə keyfiyyət.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.19V12a4.83 4.83 0 01-3.77-1.54V6.69h3.77z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Əlaqə</h3>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Bakı, Azərbaycan
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            +994 50 123 45 67
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            info@sebinecizkek.az
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İş Saatları</h3>
+                    <ul>
+                        <li>Bazar ertəsi - Cümə: 09:00 - 22:00</li>
+                        <li>Şənbə: 10:00 - 23:00</li>
+                        <li>Bazar: 10:00 - 21:00</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Keçidlər</h3>
+                    <ul>
+                        <li><a href="#home">Ana Səhifə</a></li>
+                        <li><a href="#menu">Menyu</a></li>
+                        <li><a href="#about">Haqqımızda</a></li>
+                        <li><a href="#reservation">Rezervasiya</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Səbinə Çizkek &amp; Çay Evi. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Səbət</h3>
+            <button class="cart-close" id="cartClose" aria-label="Səbəti bağla">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+                <p>Səbət boşdur</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Ümumi:</span>
+                <span id="cartTotal">0 AZN</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Sifariş Et</button>
+        </div>
+    </aside>
+
+    <div class="modal-overlay" id="checkoutOverlay"></div>
+    <div class="modal" id="checkoutModal">
+        <div class="modal-header">
+            <h3>Sifariş Tamamla</h3>
+            <button class="modal-close" id="checkoutClose" aria-label="Bağla">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <form class="checkout-form" id="checkoutForm">
+            <div class="form-group">
+                <label for="orderName">Ad, Soyad</label>
+                <input type="text" id="orderName" name="customerName" placeholder="Adınızı daxil edin" required>
+            </div>
+            <div class="form-group">
+                <label for="orderPhone">Telefon</label>
+                <input type="tel" id="orderPhone" name="phone" placeholder="+994 XX XXX XX XX" required>
+            </div>
+            <div class="form-group">
+                <label for="orderEmail">Email</label>
+                <input type="email" id="orderEmail" name="email" placeholder="Emailinizi daxil edin" required>
+            </div>
+            <div class="form-group">
+                <label for="orderAddress">Ünvan</label>
+                <input type="text" id="orderAddress" name="address" placeholder="Çatdırılma ünvanı" required>
+            </div>
+            <div class="form-group">
+                <label for="orderPayment">Ödəniş növü</label>
+                <select id="orderPayment" name="paymentType" required>
+                    <option value="">Seçin</option>
+                    <option value="cash">Nağd</option>
+                    <option value="card">Kart</option>
+                </select>
+            </div>
+            <div class="order-summary" id="orderSummary"></div>
+            <button type="submit" class="btn btn-primary btn-full">Sifarişi Təsdiqlə</button>
+        </form>
+    </div>
+
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span id="toastMessage">Uğurla əlavə edildi!</span>
+    </div>
+
+    <a href="https://wa.me/994501234567" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile elaqe">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="/app.js"></script>
+</body>
+</html>

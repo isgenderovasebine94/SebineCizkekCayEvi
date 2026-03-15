@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Səbinə Admin Panel</title>
+    <link rel="stylesheet" href="/admin/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">🍰</div>
+            <h2>Səbinə Admin Panel</h2>
+            <p class="login-subtitle">İdarəetmə panelinə daxil olun</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>İstifadəçi adı</label>
+                    <input type="text" id="loginUsername" placeholder="admin" required>
+                </div>
+                <div class="form-group">
+                    <label>Şifrə</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Daxil ol</button>
+                <p id="loginError" class="login-error" style="display:none;">Yanlış istifadəçi adı və ya şifrə</p>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="adminPanel" class="admin-panel" style="display:none;">
+        
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <span class="logo-icon">🍰</span>
+                <span class="logo-text">Səbinə Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-tab="dashboard">
+                    <span class="nav-icon">📊</span> İdarə Paneli
+                </a>
+                <a href="#" class="nav-item" data-tab="products">
+                    <span class="nav-icon">📦</span> Məhsullar
+                </a>
+                <a href="#" class="nav-item" data-tab="orders">
+                    <span class="nav-icon">🛒</span> Sifarişlər
+                </a>
+                <a href="#" class="nav-item" data-tab="reservations">
+                    <span class="nav-icon">📅</span> Rezervasiyalar
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn" class="nav-item logout">
+                    <span class="nav-icon">🚪</span> Çıxış
+                </a>
+            </div>
+        </aside>
+
+        
+        <main class="main-content">
+            
+            <header class="admin-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+                    <h1 id="pageTitle">İdarə Paneli</h1>
+                </div>
+                <div class="header-right">
+                    <span class="admin-name">Admin</span>
+                    <div class="admin-avatar">S</div>
+                </div>
+            </header>
+
+            
+            <section id="tab-dashboard" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card stat-products">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-info">
+                            <p class="stat-number" id="statProducts">0</p>
+                            <p class="stat-label">Məhsul</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-orders">
+                        <div class="stat-icon">🛒</div>
+                        <div class="stat-info">
+                            <p class="stat-number" id="statOrders">0</p>
+                            <p class="stat-label">Sifariş</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-revenue">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <p class="stat-number" id="statRevenue">0 AZN</p>
+                            <p class="stat-label">Gəlir</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-reservations">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <p class="stat-number" id="statReservations">0</p>
+                            <p class="stat-label">Rezervasiya</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Aylıq Satışlar</h3>
+                        <canvas id="salesChart" width="500" height="300"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Kateqoriya üzrə Satışlar</h3>
+                        <canvas id="categoryChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+
+                
+                <div class="recent-card">
+                    <h3>Son Sifarişlər</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Müştəri</th>
+                                <th>Cəm</th>
+                                <th>Status</th>
+                                <th>Tarix</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentOrdersBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            
+            <section id="tab-products" class="tab-content">
+                <div class="tab-header">
+                    <h2>Məhsullar</h2>
+                    <button class="btn btn-primary" id="addProductBtn">+ Yeni Məhsul</button>
+                </div>
+                <div class="filter-bar">
+                    <select id="productFilter">
+                        <option value="all">Hamısı</option>
+                        <option value="cheesecake">Cheesecake</option>
+                        <option value="cake">Tort</option>
+                        <option value="tea">Çay</option>
+                    </select>
+                    <input type="text" id="productSearch" placeholder="Məhsul axtar...">
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Şəkil</th>
+                            <th>Ad</th>
+                            <th>Təsvir</th>
+                            <th>Kateqoriya</th>
+                            <th>Qiymət</th>
+                            <th>Status</th>
+                            <th>Əməliyyat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsBody"></tbody>
+                </table>
+            </section>
+
+            
+            <section id="tab-orders" class="tab-content">
+                <div class="tab-header">
+                    <h2>Sifarişlər</h2>
+                    <select id="orderStatusFilter">
+                        <option value="all">Hamısı</option>
+                        <option value="Yeni">Yeni</option>
+                        <option value="Hazırlanır">Hazırlanır</option>
+                        <option value="Yolda">Yolda</option>
+                        <option value="Çatdırılıb">Çatdırılıb</option>
+                        <option value="Ləğv">Ləğv edilib</option>
+                    </select>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Müştəri</th>
+                            <th>Telefon</th>
+                            <th>Ünvan</th>
+                            <th>Cəm</th>
+                            <th>Ödəniş</th>
+                            <th>Tarix</th>
+                            <th>Status</th>
+                            <th>Əməliyyat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersBody"></tbody>
+                </table>
+            </section>
+
+            
+            <section id="tab-reservations" class="tab-content">
+                <div class="tab-header">
+                    <h2>Rezervasiyalar</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ad</th>
+                            <th>Telefon</th>
+                            <th>Tarix</th>
+                            <th>Saat</th>
+                            <th>Nəfər</th>
+                            <th>Əməliyyat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservationsBody"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    
+    <div id="productModal" class="modal-overlay" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Yeni Məhsul</h3>
+                <button class="modal-close" id="closeProductModal">&times;</button>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Məhsul adı *</label>
+                        <input type="text" id="productName" placeholder="Məs: New York Cheesecake" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kateqoriya *</label>
+                        <select id="productCategory" required>
+                            <option value="">Seçin</option>
+                            <option value="cheesecake">Cheesecake</option>
+                            <option value="cake">Tort</option>
+                            <option value="tea">Çay</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Təsvir</label>
+                    <textarea id="productDescription" rows="3" placeholder="Məhsul haqqında qısa məlumat..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Qiymət (AZN) *</label>
+                        <input type="number" id="productPrice" step="0.5" min="0" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="productStatus">
+                            <option value="true">Aktiv</option>
+                            <option value="false">Deaktiv</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Məhsul şəkli</label>
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <input type="file" id="productImage" accept="image/*" style="display:none;">
+                        <div id="imagePreview" class="image-preview">
+                            <span class="upload-icon">📷</span>
+                            <p>Şəkil yükləmək üçün klikləyin və ya sürükləyin</p>
+                            <p class="upload-hint">JPG, PNG — Max 5MB</p>
+                        </div>
+                        <img id="previewImg" class="preview-img" style="display:none;" alt="Preview">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelProductModal">Ləğv et</button>
+                    <button type="submit" class="btn btn-primary" id="saveProductBtn">Yadda saxla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="orderModal" class="modal-overlay" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Sifariş Detalları</h3>
+                <button class="modal-close" id="closeOrderModal">&times;</button>
+            </div>
+            <div id="orderDetails" class="order-details"></div>
+            <div class="modal-footer">
+                <label>Status dəyiş:</label>
+                <select id="orderStatusChange" class="status-select">
+                    <option value="Yeni">Yeni</option>
+                    <option value="Hazırlanır">Hazırlanır</option>
+                    <option value="Yolda">Yolda</option>
+                    <option value="Çatdırılıb">Çatdırılıb</option>
+                    <option value="Ləğv">Ləğv edilib</option>
+                </select>
+                <button class="btn btn-primary" id="updateOrderStatus">Yenilə</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="deleteModal" class="modal-overlay" style="display:none;">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h3>Silmək istəyirsiniz?</h3>
+                <button class="modal-close" id="closeDeleteModal">&times;</button>
+            </div>
+            <p class="delete-message">Bu əməliyyat geri qaytarıla bilməz.</p>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelDelete">Xeyr</button>
+                <button class="btn btn-danger" id="confirmDelete">Bəli, sil</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="toast" class="toast" style="display:none;">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="/admin/admin.js"></script>
+</body>
+</html>
