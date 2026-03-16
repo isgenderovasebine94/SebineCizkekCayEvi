@@ -1,5 +1,5 @@
 
-const API_BASE = "https://localhost:7294/api"; 
+const API_BASE = "https://sebinecizkekcayevi.onrender.com/api"; 
 
 
 let authToken = localStorage.getItem("adminToken") || null;
