@@ -1,7 +1,7 @@
 const API_BASE = "https://localhost:7294/api"; 
 
 const isDev = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-const API_BASE_URL = isDev ? API_BASE : "https://api.sebibecizkek.az/api";
+const API_BASE_URL = isDev ? API_BASE : "https://sebinecizkekcayevi.onrender.com/api";
 
 let USE_MOCK_DATA = false; 
 
