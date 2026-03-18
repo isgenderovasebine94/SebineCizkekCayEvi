@@ -1,5 +1,5 @@
 
-const API_BASE = "https://sebinecizkekcayevi.onrender.com/api"; 
+const API_BASE = "https://api.sebibecizkek.az/api"; 
 
 
 let authToken = localStorage.getItem("adminToken") || null;
